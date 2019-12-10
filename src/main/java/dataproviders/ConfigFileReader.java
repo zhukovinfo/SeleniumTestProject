@@ -1,5 +1,7 @@
 package dataproviders;
 
+import com.google.common.io.Resources;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,7 +10,7 @@ import java.util.Properties;
 
 public class ConfigFileReader {
     private Properties properties;
-    private final String propertyFilePath = "config//configuration.properties";
+    private final String propertyFilePath = "resources//config.properties";
 
     public ConfigFileReader(){
         BufferedReader reader;
@@ -28,16 +30,16 @@ public class ConfigFileReader {
     }
 
     public long getImplicitlyWait(){
-        String implicitlyWait = properties.getProperty("implicitWaitTime");
+        String implicitlyWait =  properties.getProperty("implicitWaitTime");
         if (implicitlyWait != null)
                 return Long.parseLong(implicitlyWait);
-        else throw new RuntimeException("The 'implicitWaitTime' key not found in the configuration.properties file");
+        else throw new RuntimeException("The 'implicitWaitTime' key not found in the config.properties file");
     }
 
     public String getUrl(){
         String url = properties.getProperty("url");
         if (url != null)
             return url;
-        else throw new RuntimeException("The 'url' key not found in the configuration.properties file");
+        else throw new RuntimeException("The 'url' key not found in the config.properties file");
     }
 }

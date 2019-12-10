@@ -12,7 +12,7 @@ import java.util.List;
 @Listeners(TestNGListener.class)
 public class SanityTests extends TestBase {
 
-    @Test
+    @Test(priority = 1)
     public void addVMCalculation(){
         WebDriver driver = getCurrentBrowser();
 
