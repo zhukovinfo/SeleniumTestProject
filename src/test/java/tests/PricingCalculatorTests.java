@@ -1,20 +1,22 @@
 package tests;
 
+import dataproviders.ConfigFileReader;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pageobject.*;
 import utils.*;
 
+import java.util.concurrent.TimeUnit;
+
 @Listeners(TestNGListener.class)
 public class PricingCalculatorTests extends TestBase {
 
-    @BeforeMethod
-    public void setUp(){
-        initBrowser();
-    }
-
     @Test(priority = 2)
     public void calculateVMBillingCostWithOneYearReserved(){
+        WebDriver driver = getCurrentBrowser();
+
         String costPerMonth = new MainPage(driver)
                 .openPage()
                 .clickPricing()
@@ -34,6 +36,8 @@ public class PricingCalculatorTests extends TestBase {
 
     @Test(priority = 2)
     public void calculateStorageAccountBillingCostPayAsYouGo(){
+        WebDriver driver = getCurrentBrowser();
+
         String costPerMonth = new MainPage(driver)
                 .openPage()
                 .clickPricing()
@@ -49,8 +53,4 @@ public class PricingCalculatorTests extends TestBase {
         Assert.assertEquals(costPerMonth,"$399.30");
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
 }

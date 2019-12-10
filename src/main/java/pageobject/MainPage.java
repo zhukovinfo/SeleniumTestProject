@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends Page {
-    private static String MAIN_PAGE_URL = new ConfigFileReader().getUrl();
+    private String MAIN_PAGE_URL = new ConfigFileReader().getUrl();
 
     protected WebDriver driver;
 

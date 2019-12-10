@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -11,13 +12,10 @@ import java.util.List;
 @Listeners(TestNGListener.class)
 public class SanityTests extends TestBase {
 
-    @BeforeMethod
-    public void setUp(){
-        initBrowser();
-    }
-
     @Test
     public void addVMCalculation(){
+        WebDriver driver = getCurrentBrowser();
+
         List<WebElement> modules = new MainPage(driver)
                 .openPage()
                 .clickPricing()
@@ -31,6 +29,8 @@ public class SanityTests extends TestBase {
 
     @Test(priority = 1)
     public void deleteVMCalculation(){
+        WebDriver driver = getCurrentBrowser();
+
         int countOfModules = new MainPage(driver)
                 .openPage()
                 .clickPricing()
@@ -44,12 +44,13 @@ public class SanityTests extends TestBase {
 
     @Test(priority = 1)
     public void cloneVMCalculation(){
+        WebDriver driver = getCurrentBrowser();
+
         List<WebElement> modules = new MainPage(driver)
                 .openPage()
                 .clickPricing()
                 .clickPricingCalculator()
                 .clickVirtualMachines()
-                .clickDeleteButton()
                 .clickCloneButton()
                 .getProductModuleNames();
 
@@ -58,8 +59,4 @@ public class SanityTests extends TestBase {
         Assert.assertEquals(modules.get(1).getText(),"Virtual Machines");
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
 }

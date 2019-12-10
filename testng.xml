@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium Test Suite">
-    <test verbose="1" name="SeleniumTestProject">
+<suite name="Selenium Test Suite" parallel="tests" verbose="1">
+    <test name="BrokenLinksTests">
         <classes>
             <class name="tests.BrokenLinksTests">
                 <methods>
                     <exclude name="checkBrokenLinksOnMainPage"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test name="PricingCalculatorTests">
+        <classes>
             <class name="tests.PricingCalculatorTests"/>
+        </classes>
+    </test>
+    <test name="SanityTests">
+        <classes>
             <class name="tests.SanityTests"/>
         </classes>
     </test>

@@ -1,10 +1,9 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageobject.MainPage;
 import utils.TestBase;
@@ -17,13 +16,10 @@ import java.util.List;
 
 public class BrokenLinksTests extends TestBase {
 
-    @BeforeMethod
-    public void setUp(){
-        initBrowser();
-    }
-
     @Test(priority = 3)
     public void checkBrokenLinksOnMainPage(){
+        WebDriver driver = getCurrentBrowser();
+
         new MainPage(driver).openPage();
 
         List<WebElement> links = driver.findElements(By.tagName("a"));
@@ -61,10 +57,5 @@ public class BrokenLinksTests extends TestBase {
 
         return false;
 
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
     }
 }
