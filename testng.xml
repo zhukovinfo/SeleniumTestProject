@@ -10,15 +10,15 @@
             </class>
             <class name="tests.PricingCalculatorTests">
                 <methods>
-                    <include name="calculateVMBillingCostWithOneYearReserved"/>
-                    <include name="calculateStorageAccountBillingCostPayAsYouGo"/>
+                    <exclude name="calculateVMBillingCostWithOneYearReserved"/>
+                    <exclude name="calculateStorageAccountBillingCostPayAsYouGo"/>
                 </methods>
             </class>
             <class name="tests.SanityTests">
                 <methods>
-                    <include name="addVMCalculation"/>
-                    <include name="deleteVMCalculation"/>
-                    <include name="cloneVMCalculation"/>
+                    <exclude name="addVMCalculation"/>
+                    <exclude name="deleteVMCalculation"/>
+                    <exclude name="cloneVMCalculation"/>
                 </methods>
             </class>
         </classes>
