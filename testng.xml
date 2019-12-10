@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="SeleniumTestProject">
+    <test verbose="2" name="SeleniumTestProject">
         <classes>
             <class name="tests.BrokenLinksTests">
                 <methods>
                     <exclude name="checkBrokenLinksOnMainPage"/>
                 </methods>
             </class>
-            <class name="tests.PricingCalculatorTests">
-                <methods>
-                    <include name="calculateVMBillingCostWithOneYearReserved"/>
-                    <include name="calculateStorageAccountBillingCostPayAsYouGo"/>
-                </methods>
-            </class>
-            <class name="tests.SanityTests">
-                <methods>
-                    <include name="addVMCalculation"/>
-                    <include name="deleteVMCalculation"/>
-                    <include name="cloneVMCalculation"/>
-                </methods>
-            </class>
+            <class name="tests.PricingCalculatorTests"/>
+            <class name="tests.SanityTests"/>
         </classes>
     </test>
 </suite>
