@@ -12,9 +12,11 @@ public class TestBase {
 
     @BeforeMethod
     public void initBrowser() {
+        long implicitlyWaitTime = new ConfigFileReader().getImplicitlyWait();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(new ConfigFileReader().getImplicitlyWait(), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(implicitlyWaitTime, TimeUnit.SECONDS);
     }
 
     @AfterMethod
@@ -22,7 +24,7 @@ public class TestBase {
         driver.quit();
     }
 
-    public WebDriver getCurrentBrowser(){
+    protected WebDriver getCurrentBrowser(){
         return driver;
     }
 }
