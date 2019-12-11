@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public class MainPage extends Page {
     private String MAIN_PAGE_URL = new ConfigFileReader().getUrl();
 

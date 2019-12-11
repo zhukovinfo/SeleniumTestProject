@@ -70,15 +70,15 @@
     <profiles>
         <profile>
             <id>automation</id>
+                <activation>
+                    <activeByDefault>true</activeByDefault>
+                </activation>
             <properties>
                 <build.profile.id>automation</build.profile.id>
             </properties>
         </profile>
         <profile>
             <id>dev</id>
-<!--            <activation>-->
-<!--                <activeByDefault>true</activeByDefault>-->
-<!--            </activation>-->
             <properties>
                 <build.profile.id>dev</build.profile.id>
             </properties>

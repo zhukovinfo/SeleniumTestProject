@@ -1,14 +1,10 @@
 package tests;
 
-import dataproviders.ConfigFileReader;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pageobject.*;
 import utils.*;
-
-import java.util.concurrent.TimeUnit;
 
 @Listeners(TestNGListener.class)
 public class PricingCalculatorTests extends TestBase {

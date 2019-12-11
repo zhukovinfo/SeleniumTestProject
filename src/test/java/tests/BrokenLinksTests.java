@@ -35,6 +35,11 @@ public class BrokenLinksTests extends TestBase {
         Assert.assertTrue(brokenLinks.size() == 0);
     }
 
+    @Test
+    public void test(){
+        Assert.assertTrue(1==2);
+    }
+
     private boolean isBrokenLink(WebElement link){
         String url = link.getAttribute("href");
         HttpURLConnection httpConn = null;
