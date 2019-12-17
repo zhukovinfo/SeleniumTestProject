@@ -26,9 +26,14 @@ buildNumber.properties
 ##############################
 ## IntelliJ
 ##############################
-test-output/
 .idea/
 .idea_modules/
 *.iml
 *.ipr
 *.iws
+##############################
+## Test project
+##############################
+test-output/
+allure-results/
+failed-screenshots

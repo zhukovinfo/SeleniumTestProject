@@ -50,4 +50,5 @@ public class ConfigFileReader {
             return url;
         else throw new RuntimeException("'Url' key not found at " + propertyFileName);
     }
+
 }
